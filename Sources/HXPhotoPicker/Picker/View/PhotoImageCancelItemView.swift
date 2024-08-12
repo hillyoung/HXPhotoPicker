@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PhotoImageCancelItemView: UIView, PhotoNavigationItem {
+open class PhotoImageCancelItemView: UIView, PhotoNavigationItem {
     public weak var itemDelegate: PhotoNavigationItemDelegate?
     public var itemType: PhotoNavigationItemType { .cancel }
     
@@ -19,8 +19,8 @@ public class PhotoImageCancelItemView: UIView, PhotoNavigationItem {
         initView()
     }
     
-    var button: UIButton!
-    func initView() {
+    open var button: UIButton!
+    open func initView() {
         button = UIButton(type: .custom)
         let imageName = PhotoManager.isDark ? config.photoList.cancelDarkImageName : config.photoList.cancelImageName
         button.setImage(imageName.image, for: .normal)
@@ -56,7 +56,7 @@ public class PhotoImageCancelItemView: UIView, PhotoNavigationItem {
         }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

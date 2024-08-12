@@ -35,12 +35,14 @@ extension PhotoPickerViewController: UIImagePickerControllerDelegate, UINavigati
             }
             camerConfig.languageType = pickerController.config.languageType
             camerConfig.isSaveSystemAlbum = false
+            camerConfig.editor = pickerConfig.editor
             let vc = CameraController(
                 config: camerConfig,
                 type: type,
                 delegate: self
             )
             vc.autoDismiss = false
+            vc.modalPresentationStyle = pickerConfig.modalPresentationStyle
             present(vc, animated: true)
             return
         default:

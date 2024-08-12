@@ -133,6 +133,7 @@ class TestEditorViewController: HXBaseViewController {
                         result = .image(.init(data: self.editorView.adjustmentData), .init(cropSize: .init(isFixedRatio: self.editorView.isFixedRatio, aspectRatio: self.editorView.aspectRatio, angle: self.editorView.state == .edit ? self.currentAngle : self.editedAngle)))
                     }
                     edtiorAsset = .init(type: .image(self.image!), result: result)
+                    editConfig.photo.defaultSelectedToolOption = .cropSize
                     if self.editorView.state == .edit {
                         editConfig.photo.defaultSelectedToolOption = .cropSize
                     }
